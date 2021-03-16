@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Multi Step Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css" integrity="sha512-dBL5cY4qTt42J1cfabCHTYR7KMztyd+n4t2GhD6EH/MKWJIIHuEYckJ1nHEpTwIaiDkrjzbc6WyiSkdLP+3INQ==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div id="multiStepForm">
+  <div class="succsess">
+  </div>
+  <div class="form">
+    <form action="">
+    <div class="header">
+      <h2>Signup Form</h2>
+      <div class="statusBar">
+        <div class="step">
+          <div class="text">Name</div>
+<div class="circle">1</div>
+        </div>
+        <div class="step">
+                <div class="text">Contact</div>
+<div class="circle">2</div>
+        </div>
+        <div class="step">
+                <div class="text">Birth</div>
+<div class="circle">3</div>
+        </div>
+        <div class="step">
+                <div class="text">Submit</div>
+<div class="circle">4</div>
+        </div>
+      </div>
+    </div>
+    <div class="allInputsField">
+<div class="formInputs">
+
+  <div class="inputs inputsBasic">
+    <div class="caption">
+      Basic info:
+    </div>
+  <div class="info">First name</div>
+
+  <input type="text">
+  <p class="errorFirstName"></p>
+  <div class="info">last name</div>
+
+  <input type="text">
+      <p class="errorLastName"></p>
+  <div class="buttons">
+    <button class="nextBasic"> <span>Next</span> </button>
+  </div>
+  </div>
+  <div class="inputs inputsContact">
+    <div class="caption">
+      Contact info:
+    </div>
+  <div class="info">Email adress</div>
+  <input type="email">
+  <p class="errorEmail"></p>
+
+  <div class="info">Phone number</div>
+  <input type="number">
+    <p class="errorNumber"></p>
+  <div class="buttons">
+    <button class="previusContact"> <span>PreviOus</span> </button>
+        <button class="nextContact"> <span>Next</span> </button>
+  </div>
+  </div>
+  <div class="inputs inputsBirth">
+    <div class="caption">
+      Date of Birth:
+    </div>
+  <div class="info">Date</div>
+  <div class="selectDate">
+  <select name="date" id="date">
+  <option value="date">Date</option>
+</select>
+<select name="month" id="month">
+<option value="month">Month</option>
+</select>
+<select name="year" id="year">
+<option value="year">Year</option>
+</select>
+  </div>
+  <div class="info">Gender</div>
+  <div class="selectGender">
+    <select name="gender" id="gender">
+    <option value="gender">Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="buttons">
+    <button class="previusInputsBirth"> <span>Previous</span> </button>
+        <button class="nextInputsBirth"> <span>Next</span> </button>
+  </div>
+  </div>
+  <div class="inputs inputsDetails">
+    <div class="caption">
+      Login Details:
+    </div>
+  <div class="info">Username</div>
+  <input type="text">
+    <p class="errorUsername"></p>
+  <div class="info">Password</div>
+  <input type="password">
+    <p class='errorPassword'></p>
+  <div class="buttons">
+    <button class="previusInputsDetails"> <span>Previous</span> </button>
+        <button class="nextInputsDetails"> <span>Submit</span> </button>
+  </div>
+  </div>
+</div>
+</div>
+</form>
+  </div>
+</div>
+  <script src="main.js"></script>
+</body>
+</html>

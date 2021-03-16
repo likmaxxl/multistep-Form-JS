@@ -1,0 +1,606 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body{
+
+  width:100%;
+  height:100vh;
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(0deg, rgba(34,196,69,1) 0%, rgba(32,50,161,0.5662640056022409) 88%);
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+#multiStepForm{
+    width:350px;
+    background:#fefefe;
+  position: absolute;
+  margin:0 auto;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 2px;
+    padding:45px 25px;
+overflow: hidden;
+}
+#multiStepForm .form{
+width:100%;
+}
+#multiStepForm .form form{
+    width:100%;
+}
+#multiStepForm .form .header{
+  text-align: center;
+}
+#multiStepForm .form .header h2{
+  font-weight: bold;
+  text-align: center;
+  padding:0;
+  margin:0 0 30px 0;
+}
+#multiStepForm .form .header .statusBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#multiStepForm .form .header .statusBar .step{
+  width:70px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  font-size: 13px;
+  font-weight: bold;
+}
+#multiStepForm .form .header .statusBar .step .text{
+  margin-bottom:6px;
+}
+#multiStepForm .form .header .statusBar .step .circle{
+  border:solid 2px #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:25px;
+  height:25px;
+  border-radius: 50%;
+  position: relative;
+}
+#multiStepForm .form .header .statusBar .step .circle:before{
+position: absolute;
+left:-47px;
+
+width:45px;
+height:3px;
+background: #323232;
+content:"";
+}
+#multiStepForm .form .header .statusBar .step:nth-of-type(1) .circle:before{
+
+  display: none;
+}
+#multiStepForm .form .formInputs {
+display: flex;
+/* display: block; */
+width:100%;
+transition: all .3s;
+}
+#multiStepForm .form .formInputs .caption{
+  font-weight: bold;
+  padding:35px 0 12px 0;
+  width: 350px;
+}
+#multiStepForm .form .formInputs .inputs{
+  width:100%;
+  margin-right:50px;
+}
+#multiStepForm .form .formInputs .inputsBasic .errorFirstName,
+#multiStepForm .form .formInputs .inputsBasic .errorLastName,
+#multiStepForm .form .formInputs .inputsContact .errorEmail,
+#multiStepForm .form .formInputs .inputsContact .errorNumber,
+#multiStepForm .form .formInputs .inputsDetails .errorUsername,
+#multiStepForm .form .formInputs .inputsDetails .errorPassword
+{
+  display: none;
+  color:red;
+  margin:0;
+  font-size: 12px;
+  margin-bottom:5px;
+  text-transform: capitalize;
+}
+#multiStepForm .form .formInputs .inputs .info{
+font-size: 13px;
+text-transform: capitalize;
+}
+#multiStepForm .form .formInputs .inputs .info:nth-of-type(3){
+  padding-top:10px;
+}
+#multiStepForm .form .formInputs input{
+width:100%;
+padding:5px 10px;
+margin:0;
+font-size: 16px;
+  border-radius: 2px;
+  box-shadow: none;
+  border:solid 1px #959595;
+}
+#multiStepForm .form .formInputs .inputs .buttons{
+  text-align: center;
+}
+#multiStepForm .form .formInputs .inputs .buttons button{
+  width:100%;
+  color:white;
+  margin-top:21px;
+  padding:9px 0;
+  cursor: pointer;
+  background:#448fa5;
+  border-radius: 2px;
+  border:none;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+
+#multiStepForm .form .formInputs .inputs .buttons button span {
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#multiStepForm .form .formInputs .inputs .buttons button:focus{
+  outline:none;
+  border:none;
+  box-shadow: none;
+}
+
+#multiStepForm .form .formInputs .inputs .buttons button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: -1px;
+  right: -20px;
+  transition: 0.5s;
+}
+#multiStepForm .form .formInputs .inputsContact .buttons button:nth-of-type(1) span:after,
+#multiStepForm .form .formInputs .inputsBirth .buttons button:nth-of-type(1) span:after,
+#multiStepForm .form .formInputs .inputsDetails .buttons button:nth-of-type(1) span:after {
+   content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  right:95px;
+  transition: 0.5s;
+  transform: rotate(180deg);
+}
+#multiStepForm .form .formInputs .inputsBirth .selectDate{
+  display: flex;
+}
+#multiStepForm .form .formInputs .inputsBirth .selectDate select{
+width:33%;
+padding:6px 3px;
+border: solid 1px #959595;
+}
+#multiStepForm .form .formInputs .inputsBirth .selectDate select:focus,
+#multiStepForm .form .formInputs .inputsBirth .selectGender select:focus{
+border: solid 1px #959595;
+outline:none;
+}
+#multiStepForm .form .formInputs .inputsBirth .selectGender select{
+width:100%;
+padding:6px 3px;
+border:solid 1px #959595;
+}
+#multiStepForm .form .formInputs .inputsBirth .info:nth-of-type(4){
+
+  padding-top:9px;
+}
+#multiStepForm .form .formInputs .inputsBirth .selectDate select:nth-of-type(2){
+  margin:0 5px;
+}
+#multiStepForm .form .formInputs .inputs .buttons button:hover span {
+  padding-right: 25px;
+}
+#multiStepForm .form .formInputs .inputsContact .buttons button:nth-of-type(1):hover span,
+#multiStepForm .form .formInputs .inputsBirth .buttons button:nth-of-type(1):hover span,
+#multiStepForm .form .formInputs .inputsDetails .buttons button:nth-of-type(1):hover span {
+  padding-left:39px;
+}
+
+#multiStepForm .form .formInputs .inputs .buttons button:hover span:after {
+  opacity: 1;
+  right: 11px;
+}
+
+#multiStepForm .form .formInputs .inputsContact .buttons button:nth-of-type(1):hover span:after,
+#multiStepForm .form .formInputs .inputsBirth .buttons button:nth-of-type(1):hover span:after,
+#multiStepForm .form .formInputs .inputsDetails .buttons button:nth-of-type(1):hover span:after {
+  opacity: 1;
+  right: 113px;
+}
+#multiStepForm .form .formInputs .inputsContact .buttons,
+#multiStepForm .form .formInputs .inputsBirth .buttons,
+#multiStepForm .form .formInputs .inputsDetails .buttons{
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+#multiStepForm .form .formInputs .inputsContact .buttons button:nth-of-type(1),
+#multiStepForm .form .formInputs .inputsBirth .buttons button:nth-of-type(1),
+#multiStepForm .form .formInputs .inputsDetails .buttons button:nth-of-type(1){
+  width:50%;
+margin-right:2px;
+}
+#multiStepForm .form .formInputs .inputsContact .buttons button:nth-of-type(2),
+#multiStepForm .form .formInputs .inputsBirth .buttons button:nth-of-type(2),
+#multiStepForm .form .formInputs .inputsDetails .buttons button:nth-of-type(2){
+  width:50%;
+margin-left:2px;
+}
+
+
+/***BACKGROUND ANIMATION STEPS**/
+
+/*STEP 1 ADD CLASS*/
+.step1{
+  color:rgb(34,196,69);
+}
+#multiStepForm .form .header .statusBar .step .circle1{
+  /* background:rgb(34,196,69); */
+  border:solid 1px rgb(34,196,69);
+  color:white;
+  animation-name: step1;
+  animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to left, white 50%, rgb(34,196,69) 50%) right;
+ background-size: 200%;
+
+}
+@keyframes step1 {
+  0%{
+color:black;
+       }
+  100%{
+    color:white;
+ background-position: left;
+  }
+}
+#multiStepForm .form .header .statusBar .step .circle1:after{
+  position: absolute;
+    left: 23px;
+    width: 45px;
+    height: 3px;
+    content: "";
+    animation-name: step1Before;
+      animation-duration: .3s;
+    animation-fill-mode:forwards;
+background: black;
+    background: linear-gradient(to left, black 50%, rgb(34,196,69) 50%) right;
+     background-size: 200%;
+     animation-delay: .2s;
+     z-index: 2;
+}
+@keyframes step1Before {
+
+  100%{
+
+ background-position: left;
+  }
+}
+
+
+/*STEP 1 REMOVE CLASS*/
+.step1Rem{
+
+  color:black;
+}
+#multiStepForm .form .header .statusBar .step .circle1Rem{
+  border:solid 1px black;
+  color:white;
+  animation-name: step1Remove;
+  animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to right, rgb(34,196,69) 50%, white 50%) left;
+ background-size: 200%;
+     animation-delay: .3s;
+}
+@keyframes step1Remove {
+  0%{
+color:white;
+       }
+  100%{
+    color:black;
+ background-position: right;
+  }
+}
+#multiStepForm .form .header .statusBar .step .circle1Rem:after{
+  position: absolute;
+  position: absolute;
+  left: 23px;
+   z-index: 2;
+    width: 45px;
+    height: 3px;
+    content: "";
+    animation-name: step1BeforeRem;
+      animation-duration: .3s;
+    animation-fill-mode:forwards;
+background: black;
+background: linear-gradient(to right, rgb(34,196,69) 50%, black 50%) left;
+     background-size: 200%;
+
+}
+@keyframes step1BeforeRem {
+
+  100%{
+
+ background-position: right;
+  }
+}
+
+/*STEP 2 ADD CLASS*/
+ .step2{
+  color:rgb(34,196,69);
+}
+#multiStepForm .form .header .statusBar .step .circle2{
+
+  border:solid 1px rgb(34,196,69);
+  color:white;
+  animation-name: step2;
+  animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to left, white 50%, rgb(34,196,69) 50%) right;
+ background-size: 200%;
+
+}
+@keyframes step2 {
+  0%{
+color:black;
+       }
+  100%{
+    color:white;
+ background-position: left;
+  }
+}
+
+#multiStepForm .form .header .statusBar .step .circle2:after{
+  position: absolute;
+    left: 23px;
+    width: 45px;
+    height: 3px;
+    content: "";
+    animation-name: step2After;
+      animation-duration: .3s;
+    animation-fill-mode:forwards;
+background: black;
+    background: linear-gradient(to left, black 50%, rgb(34,196,69) 50%) right;
+     background-size: 200%;
+     animation-delay: .2s;
+     z-index: 2;
+}
+@keyframes step2After {
+
+  100%{
+
+ background-position: left;
+  }
+}
+/*STEP 2 REMOVE CLASS*/
+.step2Rem{
+
+  color:black;
+}
+#multiStepForm .form .header .statusBar .step .circle2Rem{
+  border:solid 1px black;
+  color:white;
+  animation-name: step2Remove;
+  animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to right, rgb(34,196,69) 50%, white 50%) left;
+ background-size: 200%;
+     animation-delay: .3s;
+}
+@keyframes step2Remove {
+  0%{
+color:white;
+       }
+  100%{
+    color:black;
+ background-position: right;
+  }
+}
+#multiStepForm .form .header .statusBar .step .circle2Rem:after{
+  position: absolute;
+    left: 23px;
+    width: 45px;
+    height: 3px;
+    content: "";
+    animation-name: step2BeforeRem;
+      animation-duration: .3s;
+    animation-fill-mode:forwards;
+background: black;
+background: linear-gradient(to right, rgb(34,196,69) 50%, black 50%) left;
+     background-size: 200%;
+z-index: 2;
+}
+@keyframes step2BeforeRem {
+  100%{
+ background-position: right;
+  }
+}
+
+
+
+/*STEP 3*/
+.step3{
+ color:rgb(34,196,69);
+}
+#multiStepForm .form .header .statusBar .step .circle3{
+
+ border:solid 1px rgb(34,196,69);
+ color:white;
+ animation-name: step3;
+ animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to left, white 50%, rgb(34,196,69) 50%) right;
+background-size: 200%;
+
+}
+@keyframes step3 {
+ 0%{
+color:black;
+      }
+ 100%{
+   color:white;
+background-position: left;
+ }
+}
+
+#multiStepForm .form .header .statusBar .step .circle3:after{
+ position: absolute;
+   left: 23px;
+   width: 45px;
+   height: 3px;
+   content: "";
+   animation-name: step3After;
+     animation-duration: .3s;
+   animation-fill-mode:forwards;
+background: black;
+   background: linear-gradient(to left, black 50%, rgb(34,196,69) 50%) right;
+    background-size: 200%;
+    animation-delay: .2s;
+    z-index: 2;
+}
+@keyframes step3After {
+
+ 100%{
+
+background-position: left;
+ }
+}
+/**STEP 3 REMOVE CLASS*/
+.step3Rem{
+
+  color:black;
+}
+#multiStepForm .form .header .statusBar .step .circle3Rem{
+  border:solid 1px black;
+  color:white;
+  animation-name: step3Remove;
+  animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to right, rgb(34,196,69) 50%, white 50%) left;
+ background-size: 200%;
+     animation-delay: .3s;
+}
+@keyframes step3Remove {
+  0%{
+color:white;
+       }
+  100%{
+    color:black;
+ background-position: right;
+  }
+}
+#multiStepForm .form .header .statusBar .step .circle3Rem:after{
+  position: absolute;
+    left: 23px;
+    width: 45px;
+    height: 3px;
+    content: "";
+    animation-name: step3AfterRem;
+      animation-duration: .3s;
+    animation-fill-mode:forwards;
+background: black;
+background: linear-gradient(to right, rgb(34,196,69) 50%, black 50%) left;
+     background-size: 200%;
+z-index: 2;
+}
+@keyframes step3AfterRem {
+  100%{
+ background-position: right;
+  }
+}
+
+/**Step4*/
+.step4{
+ color:rgb(34,196,69);
+}
+#multiStepForm .form .header .statusBar .step .circle4{
+
+ border:solid 1px rgb(34,196,69);
+ color:white;
+ animation-name: step4;
+ animation-duration: .3s;
+animation-fill-mode:forwards;
+background: linear-gradient(to left, white 50%, rgb(34,196,69) 50%) right;
+background-size: 200%;
+
+}
+@keyframes step4 {
+ 0%{
+color:black;
+      }
+ 100%{
+   color:white;
+background-position: left;
+ }
+}
+.succsess{
+  display:none;
+  position: absolute;
+  width:100%;
+  height:100%;
+  background:white;
+  top:0;
+  left:0;
+  z-index: 99;
+}
+.succsess .succsessContent{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+}
+.succsess .succsessIcon{
+font-size: 70px;
+color:green;
+}
+.succsess .succsessText p{
+  font-size: 15px;
+}
+.succsess .succsessText .confirmBtn{
+  background-color: #44c767;
+      border-radius: 28px;
+      border: 1px solid #18ab29;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 18px;
+      padding: 13px 16px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #2f6627;
+      margin-top: 40px;
+}
+.succsess .succsessText .confirmBtn:hover{
+  background-color:#5cbf2a;
+}
+.succsess .succsessText .confirmBtn:active{
+  position:relative;
+  	top:1px;
+}
+.succsess .succsessText .confirmBtn:focus{
+  box-shadow: none;
+  outline: none;
+}
